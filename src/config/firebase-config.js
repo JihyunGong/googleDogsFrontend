@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDOpJImfzpHpNnZp8i1pvGwdtAEbOPKQiM",
-  authDomain: "auth-b870c.firebaseapp.com",
-  projectId: "auth-b870c",
-  storageBucket: "auth-b870c.appspot.com",
-  messagingSenderId: "210800307233",
-  appId: "1:210800307233:web:422e9cadde3f6b66d34760"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
