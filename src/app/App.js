@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Route, Routes, Switch, Navigate } from "react-router-dom";
-import { v4 as uuidV4 } from "uuid";
+import { Route, Routes } from "react-router-dom";
 
 import Header from "../common/components/Header/Header";
 import Home from "../common/components/Home/Home";
@@ -16,12 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/api/documents" element={<Docs token={token} />} />
-        <Route path="/newDocument" exact>
-          <Navigate to={`/newDocument/${uuidV4}`} />
-        </Route>
-        <Route path="/newDocument/:id">
-          <NewDoc />
-        </Route>
+        <Route path="/newDocument" element={<NewDoc />} />
       </Routes>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { io } from "socket.io-client";
-import Quill from "quill"
+import Quill from "quill";
 
 function NewDoc() {
   const { id: documentId } = useParams();
@@ -67,7 +67,7 @@ function NewDoc() {
       return;
     }
 
-    const handler = (delta, oldDelta, source) => {
+    const handler = (delta, source) => {
       if (source !== "user") {
         return;
       }
@@ -88,12 +88,18 @@ function NewDoc() {
     }
 
     wrapper.innerHTML = "";
+
     const editor = document.createElement("div");
+
     wrapper.append(editor);
-    const q = new Quill(editor);
-    q.disable();
-    q.setText("Loading...");
-    setQuill(q);
+
+    const ql = new Quill(editor, {
+      placeholder: "Write down here!",
+    });
+
+    ql.disable();
+    ql.setText("Loading...");
+    setQuill(ql);
   }, []);
 
   return (

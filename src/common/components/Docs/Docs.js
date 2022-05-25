@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 function Docs({ token }) {
   const [myDocs, setMyDocs] = useState([]);
@@ -8,14 +7,14 @@ function Docs({ token }) {
   useEffect(() => {
     const getData = async (token) => {
       try {
-        const res = await axios.get("/api/documents", {
+        const res = await fetch("/api/documents", {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
         });
-  
-        console.log(res);
+
+        setMyDocs(res);
       } catch (err) {
         console.log(err);
       }
@@ -25,12 +24,12 @@ function Docs({ token }) {
       getData(token);
     }
   }, []);
-  
+
 
   return (
     <div>
       <button><Link to="/">Home</Link></button>
-      <h2>My Docs</h2>
+      <h2>My Documents</h2>
       <button><Link to="/newDocument">New Document</Link></button>
     </div>
   );

@@ -13,10 +13,12 @@ function Header({ setToken }) {
         if (data) {
           setAuth(true);
           window.localStorage.setItem("auth", "true");
+
           const token = await data.getIdToken();
           setToken(token);
+
           return;
-        } 
+        }
 
         setAuth(false);
         window.localStorage.setItem("auth", "false");
@@ -30,6 +32,7 @@ function Header({ setToken }) {
   const signInWithGoogle = async () => {
     try {
       const data = await signin(authService, provider);
+
       if (data) {
         setAuth(true);
         window.localStorage.setItem("auth", "true");
@@ -51,13 +54,11 @@ function Header({ setToken }) {
 
   return (
     <header>
-      {!auth
-        ?
-        <button onClick={signInWithGoogle}>Sign up with Google Account</button>
-        :
+      {!auth ?
+        <button onClick={signInWithGoogle}>Sign up with Google Account</button> :
         <>
           <button onClick={signOutWithGoogle}>Sign out</button>
-          <button><Link to="/api/documents">My Docs</Link></button>
+          <button><Link to="/api/documents">My Documents</Link></button>
         </>
       }
     </header>
