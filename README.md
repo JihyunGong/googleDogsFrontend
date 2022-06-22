@@ -19,13 +19,3 @@
 백엔드 테스트를 진행하며 소켓과 firebase 등 새로운 모듈을 이용할 수 있는 좋은 경험을 할 수 있었습니다. 하지만 아직 새로운 것들에 대한 기본 개념이 많이 부족해 보이며 깊이 있는 탐구가 필요해 보입니다.
 
 테스트를 종료하며 켄님을 비롯하여 많은 멘토분들께 6주간 프론트엔드과 백엔드 과정을 잘 이끌어 주셔서 대단히 감사하다고 인사드리고 싶습니다. 아직 많이 부족하지만 꾸준히 성장하는 사람이 되도록 노력하겠습니다!
-
-### 환경 변수 리스트
-```json
-REACT_APP_API_KEY=AIzaSyDOpJImfzpHpNnZp8i1pvGwdtAEbOPKQiM
-REACT_APP_AUTH_DOMAIN=auth-b870c.firebaseapp.com
-REACT_APP_PROJECT_ID=auth-b870c
-REACT_APP_STORAGE_BUCKET=auth-b870c.appspot.com
-REACT_APP_MESSAGING_SENDER_ID=210800307233
-REACT_APP_APP_ID="1:210800307233:web:422e9cadde3f6b66d34760"
-```
